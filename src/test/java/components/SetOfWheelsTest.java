@@ -23,5 +23,5 @@ public class SetOfWheelsTest {
     public void hasModel() {
         assertEquals("DE23", setOfWheels.getModel());
     }
-    
+
 }

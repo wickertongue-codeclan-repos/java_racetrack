@@ -1,5 +1,8 @@
 package cars;
 
+import components.Body;
+import components.Engine;
+import components.SetOfWheels;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,10 +10,16 @@ import static org.junit.Assert.assertEquals;
 
 public class CarTest {
     Car car;
+    Engine fastEngine;
+    Body body;
+    SetOfWheels setOfWheels;
 
     @Before
     public void before() {
-        car = new Car("Ferrari", "A234", "Red");
+        fastEngine = new Engine("BAE", "398", 450);
+        body = new Body("Ace", "AGE", "Turquoise");
+        setOfWheels = new SetOfWheels("Michelin", "GEFR");
+        car = new Car("Ferrari", "A234", fastEngine, setOfWheels, body);
     }
 
     @Test
@@ -24,8 +33,14 @@ public class CarTest {
     }
 
     @Test
-    public void hasColour() {
-        assertEquals("Red", car.getColour());
+    public void canGetEngine() {
+        assertEquals("BAE", car.getEngine().getMake());
+        assertEquals(450, car.getEngine().getSpeed());
+    }
+
+    @Test
+    public void canGetSpeed() {
+        assertEquals(450, car.getSpeed());
     }
 
 }

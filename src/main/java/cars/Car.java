@@ -1,14 +1,22 @@
 package cars;
 
+import components.Body;
+import components.Engine;
+import components.SetOfWheels;
+
 public class Car {
     private String make;
     private String model;
-    private String colour;
+    private Engine engine;
+    private SetOfWheels setOfWheels;
+    private Body body;
 
-    public Car(String make, String model, String colour) {
+    public Car(String make, String model, Engine engine, SetOfWheels setOfWheels, Body body) {
         this.make = make;
         this.model = model;
-        this.colour = colour;
+        this.engine = engine;
+        this.setOfWheels = setOfWheels;
+        this.body = body;
     }
 
     public String getMake() {
@@ -19,7 +27,21 @@ public class Car {
         return model;
     }
 
-    public String getColour() {
-        return colour;
+    public Engine getEngine() {
+        return this.engine;
     }
+
+    public SetOfWheels getSetOfWheels() {
+        return this.setOfWheels;
+    }
+
+    public Body getBody() {
+        return this.body;
+    }
+
+    public int getSpeed() {
+        return engine.getSpeed();
+    };
+
+
 }
